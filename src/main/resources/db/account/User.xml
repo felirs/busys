@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="2.0" author="xianyang">
+        <createTable tableName="User">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="userName" type="VARCHAR(64)" remarks="用户录名">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(256)" remarks="密码"/>
+            <column name="userCode" type="VARCHAR(8)" remarks="用户编码">
+                <constraints nullable="false"/>
+            </column>
+            <column name="realName" type="VARCHAR(32)" remarks="用户名称">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createIndex indexName="idx_user_name" tableName="User" >
+            <column name="userName"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

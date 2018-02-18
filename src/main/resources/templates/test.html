@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" th:src="@{../static/jquery_easyui/themes/icon.css}"/>
+    <link rel="stylesheet" type="text/css" th:src="@{../static/jquery_eqsyui/themes/bootstrap/eqsyui.scss}"/>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.easyui.min.js}"></script>
+
+</head>
+<body>
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<p th:text="'Hello!, '+${name}+''"></p>
+<table class="easyui-datagrid" title="Aligning Columns in DataGrid" style="width:700px;height:250px"
+       data-options="singleSelect:true,collapsible:true,url:'/user/1',method:'get'">
+    <thead>
+    <!--<tr>-->
+        <!--<th data-options="field:'userName',width:80,halign:'center'">User Name</th>-->
+        <!--<th data-options="field:'userCode',width:100,halign:'center'">User Code</th>-->
+    <!--</tr>-->
+    </thead>
+</table>
+</body>
+</html>

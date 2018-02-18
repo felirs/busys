@@ -1,4 +1,8 @@
 
-.idea/compiler.xml
+.idea/
 
-.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_13.xml
+.class
+
+target/
+
+*.iml

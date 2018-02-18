@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/bootstrap/easyui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/icon.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/portal.css}"/>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.portal.js}"></script>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/echarts.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/busys/index.js}"></script>
+
+</head>
+<body class="easyui-layout">
+
+<div data-options="region:'west',split:true,title:'菜单',animate:true" style="width:250px;height:28px;padding:10px;">
+    <ul class="easyui-tree" th:each="menu : ${menus}">
+        <li>
+            <span th:text="${menu.text}"></span>
+            <ul th:if="${not #lists.isEmpty(menu.children)}"
+                th:each="children : ${menu.children}">
+                <li data-options="state:'closed'">
+                    <span th:text="${children.text}"></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div data-options="region:'center',title:'面板'">
+    <div id="portal-index" style="position: relative;">
+        <div style="width:50%;">
+            <div title="echarts-1" id="echarts1" collapsible="true" closable="true" style="height:300px; padding: 5px;">
+
+            </div>
+
+            <div title="Searching" iconCls="icon-search" collapsible="true" closable="true" style="height:200px;padding: 5px;">
+                <input class="easyui-searchbox"/>
+            </div>
+
+            <div title="Tutorials" collapsible="true" closable="true" style="height:200px;padding: 5px;">
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-layout.html">jeasyui-layout</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-panel.html">jeasyui-layout-panel</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-accordion.html">jeasyui-layout-accordion</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-tabs1.html">jeasyui-layout-tabs1</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-tabs2.html">jeasyui-layout-tabs2</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-tabs3.html">jeasyui-layout-tabs3</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-xp.html">jeasyui-layout-xp</a></div>
+            </div>
+        </div>
+
+        <div style="width:50%;">
+            <div title="echarts-2" id="echarts2" collapsible="true" closable="true" style="height:300px;padding: 5px;">
+
+            </div>
+
+            <div id="pgrid" title="DataGrid" collapsible="true" closable="true" style="height:200px;padding: 5px;">
+                <table class="easyui-datagrid" style="width:650px;height:auto"
+                       fit="true" border="false"
+                       singleSelect="true"
+                       idField="itemid" url="datagrid_data.json">
+                    <thead>
+                    <tr>
+                        <th field="itemid" width="60">Item ID</th>
+                        <th field="productid" width="60">Product ID</th>
+                        <th field="listprice" width="80" align="right">List Price</th>
+                        <th field="unitcost" width="80" align="right">Unit Cost</th>
+                        <th field="attr1" width="120">Attribute</th>
+                        <th field="status" width="50" align="center">Status</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div title="Tutorials" collapsible="true" closable="true" style="height:200px;padding: 5px;">
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-layout.html">jeasyui-layout</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-panel.html">jeasyui-layout-panel</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-accordion.html">jeasyui-layout-accordion</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-tabs1.html">jeasyui-layout-tabs1</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-tabs2.html">jeasyui-layout-tabs2</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-tabs3.html">jeasyui-layout-tabs3</a></div>
+                <div class="t-list"><a href="http://www.w3cschool.cc/jeasyui/jeasyui-layout-xp.html">jeasyui-layout-xp</a></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

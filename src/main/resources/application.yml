@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: "jdbc:mysql://localhost:3306/bs?useUnicode=yes&characterEncoding=UTF-8"
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    mode: HTML5
+    enabled: true
+    content-type: text/html
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+
+
+server:
+  port: 8080
+
+
+liquibase:
+  change-log: classpath:/db/bs-changelog.xml
+  contexts: dev
+  user: root
+  password: root
+  url: "jdbc:mysql://localhost:3306/bs?useUnicode=yes&characterEncoding=UTF-8"
+  enabled: true
+
+mybatis:
+  mapper-locations: classpath:/mapper/*/*.xml
+  type-aliases-package: com.bs.biz.mapper.*.*
+
+
+
+
+

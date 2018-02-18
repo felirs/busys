@@ -1,0 +1,40 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bs.biz.mapper.account.RoleMapper">
+
+    <insert id="create" parameterType="com.bs.base.model.account.Role">
+      INSERT INTO Role(
+      roleCode,
+      roleName,
+      authorities,
+      system,
+      enabled)
+      VALUES (
+      #{roleCode},
+      #{roleName},
+      #{authorities},
+      #{system},
+      #{enabled}
+      )
+    </insert>
+
+    <update id="update" parameterType="com.bs.base.model.account.Role">
+        UPDATE Role SET
+        roleCode = #{roleCode},
+        roleName = #{roleName},
+        authorities = #{authorities},
+        system = #{system},
+        enabled = #{enabled}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="com.bs.base.model.account.Role">
+        DELETE FROM Authority WHERE id = #{id}
+    </delete>
+
+    <select id="search" parameterType="com.bs.base.model.PageCondition" resultType="com.bs.base.model.account.Role">
+        SELECT * FROM Role LIMIT #{start},#{limit}
+    </select>
+</mapper>

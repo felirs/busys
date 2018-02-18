@@ -1,4 +1,4 @@
-package com.bs.biz.service;
+package com.bs.biz.service.account;
 
 import com.bs.base.model.account.User;
 

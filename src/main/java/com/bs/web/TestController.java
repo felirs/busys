@@ -1,7 +1,7 @@
 package com.bs.web;
 
 import com.bs.base.model.account.User;
-import com.bs.biz.service.UserService;
+import com.bs.biz.service.account.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;

@@ -1,0 +1,36 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bs.biz.mapper.account.AuthorityMapper">
+
+    <insert id="create" parameterType="com.bs.base.model.account.Authority">
+      INSERT INTO Authority(
+      authNo,
+      authName,
+      "desc",
+      parent)
+      VALUES (
+      #{authNo},
+      #{authName},
+      #{desc},
+      #{parent}
+      )
+    </insert>
+
+    <update id="update" parameterType="com.bs.base.model.account.Authority">
+        UPDATE Authority SET
+        authNo =#{authNo},
+        authName =#{authName},
+        "desc" =#{desc},
+        parent =#{parent}
+    </update>
+
+    <delete id="delete" parameterType="com.bs.base.model.account.Authority">
+        DELETE FROM Authority WHERE id = #{id}
+    </delete>
+
+    <select id="search" parameterType="com.bs.base.model.PageCondition" resultType="com.bs.base.model.account.Authority">
+        SELECT * FROM Authority LIMIT #{start}, #{limit}
+    </select>
+</mapper>

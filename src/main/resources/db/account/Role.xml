@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="1.0" author="xianyang">
+        <createTable tableName="Role">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="roleCode" type="VARCHAR(8)" remarks="角色编码">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roleName" type="VARCHAR(256)" remarks="角色名字"/>
+            <column name="authorities" type="TEXT" remarks="用户名称"/>
+            <column name="system" type="BIT" defaultValue="false" remarks="是否是系统"/>
+            <column name="enabled" type="BIT" defaultValue="true" remarks="是否启用"/>
+        </createTable>
+
+        <createIndex indexName="idx_role_roleCode" tableName="Role" unique="true">
+            <column name="roleCode"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,8 +1,8 @@
-package com.bs.biz.impl;
+package com.bs.biz.impl.account;
 
 import com.bs.base.model.account.User;
 import com.bs.biz.mapper.account.UserMapper;
-import com.bs.biz.service.UserService;
+import com.bs.biz.service.account.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

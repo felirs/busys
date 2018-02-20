@@ -1,6 +1,7 @@
 package com.bs.biz.impl.account;
 
 import com.bs.base.model.account.User;
+import com.bs.base.model.account.bo.UserBo;
 import com.bs.biz.mapper.account.UserMapper;
 import com.bs.biz.service.account.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public User findById(Long userId) {
         return userMapper.findById(userId);
+    }
+
+    @Override
+    public UserBo findByUserName(String userName) {
+        return userMapper.findByUserName(userName);
     }
 }

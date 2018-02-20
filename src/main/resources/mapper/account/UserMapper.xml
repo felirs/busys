@@ -7,4 +7,8 @@
     <select id="findById" resultType="com.bs.base.model.account.User">
         SELECT * FROM `user` WHERE id = #{0}
     </select>
+
+    <select id="findByUserName" resultType="com.bs.base.model.account.bo.UserBo">
+        SELECT * FROM `user` WHERE userName = #{0}
+    </select>
 </mapper>

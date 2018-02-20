@@ -1,6 +1,7 @@
 package com.bs.biz.mapper.account;
 
 import com.bs.base.model.account.User;
+import com.bs.base.model.account.bo.UserBo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -10,5 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     User findById(Long userId);
+
+    UserBo findByUserName(String userName);
 
 }

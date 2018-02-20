@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户登录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/bootstrap/easyui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/icon.css}"/>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.easyui.min.js}"></script>
+
+</head>
+<body>
+<h2>登&nbsp;&nbsp;录</h2>
+<div style="margin:20px 0;"></div>
+<div class="easyui-panel" title="New Topic" style="width:400px">
+    <div style="padding:10px 60px 20px 60px">
+        <form id="ff" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td>Name:</td>
+                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"/></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input class="easyui-textbox" type="text" name="email" data-options="required:true,validType:'email'"/></td>
+                </tr>
+                <tr>
+                    <td>Subject:</td>
+                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"/></td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td><input class="easyui-textbox" name="message" data-options="multiline:true" style="height:60px"/></td>
+                </tr>
+            </table>
+        </form>
+        <div style="text-align:center;padding:5px">
+            <a href="javascript:void(0)" class="easyui-linkbutton">Submit</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton">Clear</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

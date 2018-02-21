@@ -1,4 +1,6 @@
 $(function(){
+
+    $('#w').window('open');
     var $btn_submit = $('a#login-btn-submit'),
         $btn_clear = $('a#login-btn-clear'),
         $form = $('#login-form');

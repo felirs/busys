@@ -10,27 +10,28 @@
 
 </head>
 <body>
-<h2>登&nbsp;&nbsp;录</h2>
-<div style="margin:20px 0;"></div>
-<div class="easyui-panel" style="width:400px">
-    <div style="padding:10px 60px 20px 60px">
-        <form id="login-form" method="post">
-            <table cellpadding="5">
-                <tr>
-                    <td>用户名:</td>
-                    <td><input class="easyui-textbox" type="text" name="username" data-options="required:true"/></td>
-                </tr>
-                <tr>
-                    <td>密码:</td>
-                    <td><input class="easyui-textbox" type="password" name="password" data-options="required:true"/></td>
-                </tr>
-            </table>
-        </form>
-        <div style="text-align:center;padding:5px">
-            <a id="login-btn-submit" href="javascript:void(0)" class="easyui-linkbutton">登录</a>
-            <a id="login-btn-clear" href="javascript:void(0)" class="easyui-linkbutton">清空</a>
+
+<div id="w" class="easyui-window" title="请先登录"
+     data-options="modal:true,closed:true,iconCls:'Lockgo',closable:false,minimizable:false"
+     style="width:400px;padding:20px 70px 20px 70px;">
+
+    <form id="login-form">
+        <div style="margin-bottom:10px">
+            <input class="easyui-textbox" name="username" id="username" style="width:100%;height:30px;padding:12px"
+                   data-options="prompt:'用户名',iconCls:'icon-man',iconWidth:38"/>
         </div>
-    </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" id="password" name="password" type="password" style="width:100%;height:30px;padding:12px"
+                   data-options="prompt:'密码',iconCls:'icon-lock',iconWidth:38"/>
+        </div>
+        <div>
+            <a id="login-btn-submit" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-ok'"
+               style="padding:5px 0px;width:100%;">
+                <span style="font-size:14px;">登录</span>
+            </a>
+        </div>
+    </form>
+
 </div>
 </body>
 

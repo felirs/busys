@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/icon.css}"/>
     <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/busys/account/login.js}"></script>
 
 </head>
 <body>
@@ -13,29 +14,21 @@
 <div style="margin:20px 0;"></div>
 <div class="easyui-panel" title="New Topic" style="width:400px">
     <div style="padding:10px 60px 20px 60px">
-        <form id="ff" method="post">
+        <form id="login-form" method="post">
             <table cellpadding="5">
                 <tr>
-                    <td>Name:</td>
-                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"/></td>
+                    <td>用户名:</td>
+                    <td><input class="easyui-textbox" type="text" name="username" data-options="required:true"/></td>
                 </tr>
                 <tr>
-                    <td>Email:</td>
-                    <td><input class="easyui-textbox" type="text" name="email" data-options="required:true,validType:'email'"/></td>
-                </tr>
-                <tr>
-                    <td>Subject:</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"/></td>
-                </tr>
-                <tr>
-                    <td>Message:</td>
-                    <td><input class="easyui-textbox" name="message" data-options="multiline:true" style="height:60px"/></td>
+                    <td>密码:</td>
+                    <td><input class="easyui-textbox" type="password" name="password" data-options="required:true"/></td>
                 </tr>
             </table>
         </form>
         <div style="text-align:center;padding:5px">
-            <a href="javascript:void(0)" class="easyui-linkbutton">Submit</a>
-            <a href="javascript:void(0)" class="easyui-linkbutton">Clear</a>
+            <a id="login-btn-submit" href="javascript:void(0)" class="easyui-linkbutton">登录</a>
+            <a id="login-btn-clear" href="javascript:void(0)" class="easyui-linkbutton">清空</a>
         </div>
     </div>
 </div>

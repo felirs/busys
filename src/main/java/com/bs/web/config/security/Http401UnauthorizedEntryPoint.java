@@ -25,7 +25,7 @@ public class Http401UnauthorizedEntryPoint implements AuthenticationEntryPoint {
                          AuthenticationException arg) throws IOException, ServletException {
         if(!StringUtils.isEmpty(request.getHeader("x-requested-with"))){
             Map<String, Object> result = new LinkedHashMap<>();
-            result.put("success", true);
+            result.put("success", false);
 
             response.getWriter().print(JSON.toJSONString(result));
             response.getWriter().flush();

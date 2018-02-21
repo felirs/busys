@@ -20,7 +20,7 @@ public class JsonAuthFailureHandler implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("success", true);
+        result.put("success", false);
 
         response.getWriter().print(JSON.toJSONString(result));
         response.getWriter().flush();

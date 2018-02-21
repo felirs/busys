@@ -14,7 +14,7 @@
 </head>
 <body class="easyui-layout">
 
-<div data-options="region:'west',split:true,animate:true,title='菜单'" style="width:250px;height:28px;padding:10px;">
+<div data-options="region:'west',title:'菜单',split:true,animate:true" style="width:250px;height:28px;padding:10px;">
     <ul class="easyui-tree" th:each="menu : ${menus}">
         <li>
             <span th:text="${menu.text}"></span>

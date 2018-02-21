@@ -11,7 +11,6 @@ $(function(){
             data:$form.serialize(),
             success:function (result) {
                 var resultObj = JSON.parse(result);
-                console.log(resultObj.success);
                 if(resultObj.success){
                     window.location.href="/index";
                 }else{
@@ -25,6 +24,6 @@ $(function(){
     });
 
     $btn_clear.on('click', function () {
-        $form.clear();
+        $form[0].reset();
     })
 });

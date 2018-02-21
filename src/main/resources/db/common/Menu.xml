@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
 
-    <changeSet id="2.0" author="xianyang">
+    <changeSet id="1.0" author="xianyang">
         <createTable tableName="Menu">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -21,6 +21,13 @@
         <createIndex indexName="idx_menu_menuNo" tableName="Menu">
             <column name="menuNo"/>
         </createIndex>
+
+        <sqlFile path="Menu.data"
+                 encoding="utf8"
+                 dbms="mysql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"/>
     </changeSet>
 
 </databaseChangeLog>

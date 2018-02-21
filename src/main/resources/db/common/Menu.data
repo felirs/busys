@@ -1,0 +1,6 @@
+INSERT INTO `Menu` ( `menuNo`, `text`, `authorityNo`, `icon`, `url`, `parent`) VALUES ( '1000', '系统设置', '1000', NULL, NULL, '0');
+INSERT INTO `Menu` ( `menuNo`, `text`, `authorityNo`, `icon`, `url`, `parent`) VALUES ( '1001', '用户管理', '1001', NULL, NULL, '1000');
+INSERT INTO `Menu` ( `menuNo`, `text`, `authorityNo`, `icon`, `url`, `parent`) VALUES ( '1002', '角色管理', '1002', NULL, NULL, '1000');
+INSERT INTO `Menu` ( `menuNo`, `text`, `authorityNo`, `icon`, `url`, `parent`) VALUES ( '1003', '权限管理', '1003', NULL, NULL, '1000');
+INSERT INTO `Menu` ( `menuNo`, `text`, `authorityNo`, `icon`, `url`, `parent`) VALUES ( '1004', '团队管理', '1004', NULL, NULL, '1000');
+INSERT INTO `Menu` ( `menuNo`, `text`, `authorityNo`, `icon`, `url`, `parent`) VALUES ( '2000', '项目管理', '2000', NULL, NULL, '0');

@@ -15,7 +15,7 @@ public class Team extends BaseModel{
     //团队名称
     private String teamName;
 
-    //是否启用
+    //是否启用,
     private Boolean enabled;
 
     public String getTeamCode() {

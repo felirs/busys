@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="1.0" author="peterpan">
+        <createTable tableName="Tser">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="teamName" type="VARCHAR(64)" remarks="团队录名">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(256)" remarks="密码">
+                <constraints nullable="false"/>
+            </column>
+            <column name="teamCode" type="VARCHAR(8)" remarks="团队编码">
+                <constraints nullable="false"/>
+            </column>
+            <column name="realName" type="VARCHAR(32)" remarks="用户名称"/>
+            <column name="roles" type="TEXT" remarks="角色"/>
+            <column name="authNos" type="TEXT" remarks="权限编码"/>
+            <column name="locked" type="BIT" defaultValue="false" remarks="锁定"/>
+            <column name="enabled" type="BIT" defaultValue="true" remarks="是否启用"/>
+        </createTable>
+
+        <createIndex indexName="idx_user_name" tableName="User" unique="true">
+            <column name="userName"/>
+        </createIndex>
+
+        <sqlFile path="User.data"
+                 encoding="utf8"
+                 dbms="mysql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"/>
+
+    </changeSet>
+
+</databaseChangeLog>

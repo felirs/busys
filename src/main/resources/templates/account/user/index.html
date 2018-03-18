@@ -61,6 +61,41 @@
 
 </div>
 
+<div id="user-dialog" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons">
+    <div class="ftitle">用户信息</div>
+    <hr/>
+    <form id="user-form" method="post">
+        <table cellpadding="5" width="100%">
+            <tr>
+                <td>用户名:</td>
+                <td><input name="userName" class="easyui-textbox" required="true"/></td>
+            </tr>
+            <tr>
+                <td>用户编码:</td>
+                <td><input name="userCode" class="easyui-textbox" required="true"/></td>
+            </tr>
+            <tr>
+                <td>真实姓名:</td>
+                <td><input name="realName" class="easyui-textbox" required="true"/></td>
+            </tr>
+            <tr>
+                <td>角色:</td>
+                <td>
+                    <select class="easyui-combobox" name="roles">
+                       <option value="admin">管理员</option>
+                        <option value="user">普通用户</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a id="btn-user-save" href="#" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#user-dialog').dialog('close')">取消</a>
+</div>
+
 </body>
 
 </html>

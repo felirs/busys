@@ -19,6 +19,12 @@ public class UserServiceImpl implements UserService{
     private UserMapper userMapper;
 
     @Override
+    public User create(User user) {
+        userMapper.create(user);
+        return user;
+    }
+
+    @Override
     public User findById(Long userId) {
         return userMapper.findById(userId);
     }

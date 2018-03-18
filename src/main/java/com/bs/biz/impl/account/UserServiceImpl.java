@@ -7,6 +7,8 @@ import com.bs.biz.service.account.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by xianyang on 2018/2/4.
  */
@@ -24,5 +26,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserBo findByUserName(String userName) {
         return userMapper.findByUserName(userName);
+    }
+
+    @Override
+    public List<UserBo> searchAll() {
+        return userMapper.searchAll();
+    }
+
+    @Override
+    public void deleteById(Long userId) {
+        userMapper.deleteById(userId);
     }
 }

@@ -17,11 +17,17 @@
 <div data-options="region:'west',title:'菜单',split:true,animate:true" style="width:250px;height:28px;padding:10px;">
     <ul class="easyui-tree" th:each="menu : ${menus}">
         <li>
-            <span th:text="${menu.text}"></span>
+            <span><a href="www.baidu.com" th:text="${menu.text}"></a></span>
             <ul th:if="${not #lists.isEmpty(menu.children)}"
                 th:each="children : ${menu.children}">
                 <li data-options="state:'closed'">
                     <span th:text="${children.text}"></span>
+                    <ul th:if="${not #lists.isEmpty(children.children)}"
+                        th:each="subChildren: ${children.children}">
+                        <li>
+                           <span><a href="www.baidu.com" th:text="${menu.text}"></a></span>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>

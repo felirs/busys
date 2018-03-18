@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/bootstrap/easyui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/jquery_easyui/themes/icon.css}"/>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/jquery_easyui/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/busys/account/user/user.js}"></script>
+</head>
+<body class="easyui-layout">
+
+<div data-options="region:'west',title:'菜单',split:true,animate:true" style="width:250px;height:28px;padding:10px;">
+    <ul class="easyui-tree" th:each="menu : ${menus}">
+        <li>
+            <span><a href="www.baidu.com" th:text="${menu.text}"></a></span>
+            <ul th:if="${not #lists.isEmpty(menu.children)}"
+                th:each="children : ${menu.children}">
+                <li data-options="state:'closed'">
+                    <span th:text="${children.text}"></span>
+                    <ul th:if="${not #lists.isEmpty(children.children)}"
+                        th:each="subChildren: ${children.children}">
+                        <li>
+                            <span><a href="www.baidu.com" th:text="${menu.text}"></a></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div data-options="region:'center'">
+    <div class="panel-header">
+        <div class="panel-title" data-options="region:west">
+            <div data-options="align:right" th:if="${session.SPRING_SECURITY_CONTEXT != null}"
+                 th:text="${session.SPRING_SECURITY_CONTEXT.authentication.principal.userName}"></div>
+        </div>
+    </div>
+    <div>
+        <table id="user-grid" title="用户管理" class="easyui-datagrid"
+               url="/user/all"
+               toolbar="#toolbar"
+               rownumbers="true" fitColumns="false" singleSelect="true">
+            <thead>
+            <tr>
+                <th field="userCode" width="20%">用户编码</th>
+                <th field="userName" width="20%">用户名</th>
+                <th field="realName" width="20%">真实姓名</th>
+                <th field="roles" width="25%">角色</th>
+                <th field="enabled" width="15%">是否启用</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="toolbar">
+            <a id="btn-user-add" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
+            <a id="btn-user-edit" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true">编辑</a>
+            <a id="btn-user-delete" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

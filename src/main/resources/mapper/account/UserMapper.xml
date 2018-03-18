@@ -11,4 +11,12 @@
     <select id="findByUserName" resultType="com.bs.base.model.account.bo.UserBo">
         SELECT * FROM `user` WHERE userName = #{0}
     </select>
+
+    <select id="searchAll" resultType="com.bs.base.model.account.bo.UserBo">
+        SELECT * FROM `user`
+    </select>
+
+    <delete id="deleteById">
+        DELETE FROM `user` WHERE id = #{0}
+    </delete>
 </mapper>

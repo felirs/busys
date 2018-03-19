@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by xianyang on 2018/2/4.
+ * Created by peter on 2018/2/4.
  */
 @Service
 public class TeamServiceimpl implements TeamService{
-k
+
     @Autowired
     private TeamMapper teamMapper;
 

@@ -15,6 +15,7 @@
 <body class="easyui-layout">
 
 <div data-options="region:'west',title:'菜单',split:true,animate:true" style="width:250px;height:28px;padding:10px;">
+    <!--/*@thymesVar id="menus" type=""*/-->
     <ul class="easyui-tree" th:each="menu : ${menus}">
         <li>
             <span><a href="www.baidu.com" th:text="${menu.text}"></a></span>

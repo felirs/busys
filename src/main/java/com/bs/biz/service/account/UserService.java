@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface UserService {
 
+    User create(User user);
+
     User findById(Long userId);
 
     UserBo findByUserName(String userName);

@@ -12,6 +12,8 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
+    User create(User user);
+
     User findById(Long userId);
 
     UserBo findByUserName(String userName);

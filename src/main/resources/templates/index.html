@@ -25,7 +25,7 @@
                     <ul th:if="${not #lists.isEmpty(children.children)}"
                         th:each="subChildren: ${children.children}">
                         <li>
-                           <span><a href="www.baidu.com" th:text="${menu.text}"></a></span>
+                           <span><a th:href="${subChildren.url}" th:text="${subChildren.text}"></a></span>
                         </li>
                     </ul>
                 </li>

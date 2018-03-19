@@ -1,5 +1,6 @@
 package com.bs.web.account;
 
+import com.bs.base.model.account.User;
 import com.bs.base.model.account.bo.UserBo;
 import com.bs.biz.service.account.UserService;
 import com.bs.web.BaseController;
@@ -9,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -51,6 +53,15 @@ public class UserController extends BaseController{
             @AuthenticationPrincipal BsUserDetails bsUserDetails){
         userService.deleteById(userId);
         return true;
+    }
+
+    @RequestMapping("add")
+    @ResponseBody
+    @PreAuthorize("#bsUserDetails != null")
+    public void add(
+            @RequestBody User user,
+            @AuthenticationPrincipal BsUserDetails bsUserDetails){
+        userService.create(user);
     }
 
 }

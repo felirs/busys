@@ -4,19 +4,42 @@
 
 <mapper namespace="com.bs.biz.mapper.account.UserMapper">
 
+    <insert id="create">
+        INSERT INTO `User` (
+        userName,
+        password,
+        userCode,
+        realName,
+        roles,
+        authNos,
+        locked,
+        enabled) VALUES (
+        #{userName},
+        #{password},
+        #{userCode},
+        #{realName},
+        #{roles},
+        #{authNos},
+        FALSE ,
+        #{enabled});
+        <selectKey resultType="long" keyProperty="id">
+            SELECT @@IDENTITY AS id;
+        </selectKey>
+    </insert>
+
     <select id="findById" resultType="com.bs.base.model.account.User">
-        SELECT * FROM `user` WHERE id = #{0}
+        SELECT * FROM `User`  WHERE id = #{0}
     </select>
 
     <select id="findByUserName" resultType="com.bs.base.model.account.bo.UserBo">
-        SELECT * FROM `user` WHERE userName = #{0}
+        SELECT * FROM `User`  WHERE userName = #{0}
     </select>
 
     <select id="searchAll" resultType="com.bs.base.model.account.bo.UserBo">
-        SELECT * FROM `user`
+        SELECT * FROM `User`
     </select>
 
     <delete id="deleteById">
-        DELETE FROM `user` WHERE id = #{0}
+        DELETE FROM `User`  WHERE id = #{0}
     </delete>
 </mapper>

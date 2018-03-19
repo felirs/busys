@@ -10,21 +10,29 @@ public class User extends BaseModel {
 
     private static final long serialVersionUID = -2915121212531913756L;
 
+    //用户名
     private String userName;
 
+    //用户编码
     private String userCode;
 
+    //密码
     @JsonIgnore
     private String password;
 
+    //真实姓名
     private String realName;
 
+    //角色
     private String roles;
 
+    //权限编码
     private String authNos;
 
+    //是否锁定
     private Boolean locked = false;
 
+    //是否启动
     private Boolean enabled = true;
 
     public String getUserName() {

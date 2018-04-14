@@ -38,8 +38,4 @@ public class TeamServiceimpl implements TeamService{
 
     }
 
-    @Override
-    public TeamBo findByUserName(String teamName) {
-        return teamMapper.findByUserName(teamName);
-    }
 }

@@ -8,7 +8,7 @@
         SELECT * FROM `team` WHERE id = #{0}
     </select>
 
-    <select id="findByUserName" resultType="com.bs.base.model.account.bo.TeamBoBo">
+    <select id="findByTeamName" resultType="com.bs.base.model.account.bo.TeamBo">
         SELECT * FROM `team` WHERE teamName = #{0}
     </select>
 </mapper>

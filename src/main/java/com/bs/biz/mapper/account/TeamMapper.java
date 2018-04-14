@@ -14,7 +14,7 @@ public interface TeamMapper {
 
     Team findById(Long teamId);
 
-    TeamBo findByUserName(String teamName);
+    TeamBo findByTeamName(String teamName);
 
     List<TeamBo> searchAll();
 

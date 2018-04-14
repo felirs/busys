@@ -23,18 +23,6 @@
             <column name="locked" type="BIT" defaultValue="false" remarks="锁定"/>
             <column name="enabled" type="BIT" defaultValue="true" remarks="是否启用"/>
         </createTable>
-
-        <createIndex indexName="idx_user_name" tableName="User" unique="true">
-            <column name="userName"/>
-        </createIndex>
-
-        <sqlFile path="User.data"
-                 encoding="utf8"
-                 dbms="mysql"
-                 relativeToChangelogFile="true"
-                 splitStatements="true"
-                 stripComments="true"/>
-
     </changeSet>
 
 </databaseChangeLog>

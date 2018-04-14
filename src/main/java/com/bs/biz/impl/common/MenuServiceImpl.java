@@ -35,7 +35,7 @@ public class MenuServiceImpl implements MenuService {
     @Override
     @CacheEvict(allEntries = true)
     public void update(Menu menu) {
-        menuMapper.
+        menuMapper.update(menu);
     }
 
     //向下寻找子菜单

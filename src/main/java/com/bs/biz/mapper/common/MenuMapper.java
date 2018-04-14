@@ -14,4 +14,6 @@ public interface MenuMapper {
 
     List<Menu> findByParent(String parent);
 
+    void update(Menu menu);
+
 }

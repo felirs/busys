@@ -11,4 +11,6 @@ public interface MenuService {
 
     List<Menu> findAll();
 
+    void update(Menu menu);
+
 }

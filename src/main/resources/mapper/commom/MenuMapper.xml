@@ -7,4 +7,14 @@
     <select id="findByParent" resultType="com.bs.base.model.common.Menu">
         SELECT * FROM Menu where parent = #{0}
     </select>
+
+    <update id="update">
+        UPDATE Menu SET
+        menuNo = #{menuNo}
+        text = #{text}
+        authorityNo = #{authorityNo}
+        icon = #{icon}
+        url = #{url}
+        parent = #{parent}
+    </update>
 </mapper>

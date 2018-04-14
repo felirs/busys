@@ -31,4 +31,10 @@ public class IndexController extends BaseController{
     public List<Menu> allMenus(){
         return menuService.findAll();
     }
+
+    @RequestMapping("menu/cache/clear")
+    @ResponseBody
+    public void clearMenuCacheTest(){
+        menuService.update(null);
+    }
 }

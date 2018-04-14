@@ -13,6 +13,10 @@ spring:
     cache: false
   mvc:
     static-path-pattern: /static/**
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 30000
 
 server:
   port: 8080
